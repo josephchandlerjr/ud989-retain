@@ -53,10 +53,11 @@ $(function(){
             var htmlStr = '';
             octopus.getNotes().forEach(function(note){
                 htmlStr += '<li class="note">' +
-                        note.content + 
 						'<span class="note-date">' +
-						note.date +
+						 new Date(note.date).toString() +
 						'</span>' + 
+                        note.content + 
+
                     '</li>'
             });
             this.noteList.html( htmlStr );
